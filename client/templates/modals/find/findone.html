@@ -1,0 +1,30 @@
+<template name="findone">
+    {{#ionModal focusFirstInput=true title="按车架号查询"}}
+        <div class="list">
+            <div class="item item-input-inset">
+                <label class="item-input-wrapper">
+                    {{> ionIcon icon="ios-search" class="placeholder-icon"}}
+                    <input type="text" placeholder="请输入车架号" value="{{searchQuery}}">
+                </label>
+            </div>
+           {{#ionList}}
+        {{#each newcar}}
+        <a href="{{pathFor 'content'}}" class="item item-avatar" style="width: 100%;height: 150px; margin: 0;padding: 0;">
+           <div style="width:30%;height:100%;display: block;float: left;padding-top: 4px;">
+            <img src="http://localhost:8000/kd_pzqz/?id={{_id}}" style="width: 100%;height: 100%;"/>
+                    </div>
+            <div style="padding-left: 38%;padding-top: 0px; width:62%;height:100%;">
+              <p>生产单位:{{dwmc}}</p>
+              <p>生产人员:{{sc_xm}}</p>
+              <p>操作人员:{{cz_xm}}</p>
+              <p>工位编号:{{gwbh}}</p>
+              <p>发动机号:{{fdjh}}</p>
+              <p>开始:{{starTime}}</p>
+              <p>完工:{{endTime}}</p>
+            </div>
+        </a>
+        {{/each}}
+        {{/ionList}}
+        </div>
+    {{/ionModal}}
+</template>

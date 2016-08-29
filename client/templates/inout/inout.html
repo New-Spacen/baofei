@@ -1,0 +1,34 @@
+<template name="inout">
+
+  {{#contentFor "headerButtonLeft"}}
+    <button class="button button-clear pull-left button-positive" data-ion-modal="search">
+      {{> ionIcon icon='ios-search'}}
+    </button>
+  {{/contentFor}}
+
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">出入记录</h1>
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent}}
+      {{#ionList}}
+        {{#each inouts}}
+
+
+    <a class="item item-thumbnail-left" href={{pathFor 'inoutshow' _id=this._id }}>
+      <img src="http://kaifu.kdinfo.cn:4000/gridfs/?id={{thumbpic}}">
+      <h2>{{hphm}}</h2>
+      <p>{{fx}}</p>
+      <p>{{time}}</p>
+      <p>绿洲片区({{gate}})</p>
+    </a>
+
+        {{/each}}
+      {{/ionList}}
+    {{/ionContent}}
+  {{/ionView}}
+
+</template>
+

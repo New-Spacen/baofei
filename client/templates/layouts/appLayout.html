@@ -1,0 +1,17 @@
+<template name="appLayout">
+
+  {{#ionBody}}
+    {{> ionNavBar}}
+
+    {{#ionNavView}}
+      {{> yield}}
+    {{/ionNavView}}
+
+      {{#ionTabs style="ios"}}
+        {{> ionTab title="生产过程" path="carlist" iconOff="ios-world-outline" iconOn="ios-world" class="tab-item-positive"}}
+        {{> ionTab title="历史查询" path="bjlist" iconOff="ios-color-filter-outline" iconOn="ios-color-filter" class="tab-item-positive"}}
+        {{> ionTab title="我的" path="profile" iconOff="ios-person-outline" iconOn="ios-person" class="tab-item-positive"}}
+      {{/ionTabs}}
+  {{/ionBody}}
+
+</template>

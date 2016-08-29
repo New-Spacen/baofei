@@ -1,0 +1,54 @@
+<template name="bjshow">
+
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton class="button-positive" text=false}}
+  {{/contentFor}}
+
+
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">{{vehinfo.dw}}</h1>
+  {{/contentFor}}
+  
+    {{#ionView}}
+    {{#ionContent}}
+      {{#ionList}}
+    
+<div class="list card">
+
+  <div class="item item-avatar">
+    <img src="/images/alarm_{{type}}.png">
+    <h2>{{hphm}}</h2>
+    <p>{{utc}}</p>
+  </div>
+
+  <div class="item item-body">
+  
+    <img class="full-image" src="http://maps.google.cn/maps/api/staticmap?zoom=14&size=512x400&sensor=true&markers={{gcjLocation}}&scale=2">
+    <p>
+      {{gaddress}}
+    </p>
+    
+    <p>
+      速度 {{speed}} km/h
+    </p>
+    <p>
+      <a href="#" class="subdued">1 评论</a>
+      <a href="#" class="subdued">5 举报</a>
+    </p>
+  </div>
+
+  <div class="item item-body">
+   <p>责任人:{{vehinfo.zrr}} {{vehinfo.zrrtel}}</p>
+  </div>
+  
+  
+  <div class="item item-body">
+   <p>驾驶人:{{vehinfo.jsy}} {{vehinfo.jsytel}}</p>
+  </div>
+</div>
+      {{/ionList}}
+
+    {{/ionContent}}
+  {{/ionView}}
+</template>

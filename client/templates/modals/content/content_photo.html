@@ -1,0 +1,38 @@
+<template name="content_photo">
+<style type="text/css">
+	.photo{height: 180px;width: 90%;margin:0 auto 0 auto;padding: 0; border-bottom: 1px solid #ccc;}
+	p{height: 30px;width: 100%;margin: 0;padding: 0;}
+	img{height: 148px;width: 90%;padding: 0 auto auto 0;margin: 0px;}
+</style>
+	{{#with veh}}
+		<div class="photo" >
+			<p>报废车辆全貌照片（见车牌号码）：</p>
+			<img src="{{qmz}}">
+		</div>
+
+		<div class="photo" >
+			<p>报废车辆发动机损坏照片（见发动机号）：</p>
+			<img src="{{fdj}}">
+		</div>
+
+		<div class="photo">
+			<p>报废车辆方向机损坏照片：</p>
+			<img src="{{fxj}}"> 
+		</div>
+		
+		<div class="photo">
+			<p>报废车辆变速器损坏照片：</p>
+			<img src="{{bsq}}">
+		</div>
+
+		<div class="photo">
+			<p>报废车辆前后桥损坏照片：</p>
+			<img src="{{qhq}}">
+		</div>
+
+		<div class="photo">
+			<p>报废车辆车架损坏照片（见车架号）：</p>
+			<img src="{{cjz}}">
+		</div>
+	{{/with}}
+</template>

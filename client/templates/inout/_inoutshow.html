@@ -1,0 +1,62 @@
+<template name="inoutshow">
+
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton class="button-positive" text=false}}
+  {{/contentFor}}
+
+
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">{{hphm}}</h1>
+  {{/contentFor}}
+  
+    {{#ionView}}
+    {{#ionContent}}
+      {{#ionList}}
+    
+<div class="list card">
+
+  <div class="item item-avatar">
+    <img src="/images/alarm_{{fx}}.png">
+    <h2>{{hphm}}</h2>
+    <p>{{vehinfo.dw}}</p>
+  </div>
+
+  <div class="item item-body">
+
+  <a href="http://kaifu.kdinfo.cn:4000/gridfs/?id={{mainpic}}" class="fancybox" >
+        <img class="full-image" src="http://kaifu.kdinfo.cn:4000/gridfs/?id={{mainpic}}">
+  </a>
+
+{{#if back}}
+  <a href="http://kaifu.kdinfo.cn:4000/gridfs/?id={{back}}" class="fancybox" >
+        <img class="full-image" src="http://kaifu.kdinfo.cn:4000/gridfs/?id={{back}}">
+  </a>
+{{/if}}
+
+
+{{#if vehinfo.imei}}  
+    <img class="full-image" src={{mappath}}>
+{{/if}}
+  
+    <p>
+    </p>
+    
+    <p>
+      <a href="#" class="subdued">1 举报</a>
+      <a href="#" class="subdued">5 个评论  {{vehinfo.imei}}</a>
+    </p>
+  </div>
+
+        <div class="padding product-detail-comments">
+          <h5>加入黑名单</h5>
+            <button class="button button-positive button-small button-circle button-new-comment" data-action="save">
+              {{>ionIcon icon="checkmark"}}
+            </button>
+        </div>
+</div>
+      {{/ionList}}
+
+    {{/ionContent}}
+  {{/ionView}}
+</template>

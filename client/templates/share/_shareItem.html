@@ -1,0 +1,19 @@
+<template name="_shareItem">
+  {{#with product}}
+    {{#ionItem path=../path iconLeft=true iconRight=true}}
+      
+	  <!--<img src={{image}} height=100>-->
+     
+      
+			  <p>
+	分享: </p>
+	<img   style="width:30%;height:230px;" src="{{share}}"  alt="分享" > 
+	
+      <span class="comments-count">
+        {{numberOfComments}}
+        {{> ionIcon icon="ios-chatbubble" }}
+      </span>
+    {{/ionItem}}
+
+  {{/with}}
+</template>

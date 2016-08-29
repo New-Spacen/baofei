@@ -1,0 +1,35 @@
+<template name="share">
+
+  {{#contentFor "headerButtonLeft"}}
+    <button class="button button-clear pull-left button-positive" data-ion-modal="search">
+      {{> ionIcon icon='ios-search'}}
+    </button>
+  {{/contentFor}}
+  
+  {{#contentFor "headerButtonRight"}}
+    <button class="button button-clear pull-right button-positive" data-action="shareBT" data-product-id="{{product._id}}">
+      {{> ionIcon icon='ios-camera-outline'}}
+    </button>
+  {{/contentFor}}
+  
+  {{#contentFor "headerTitle"}}
+    <h1 class="title"></h1>
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent}}
+		  {{#ionList}}
+			{{#each sharelist}}
+			  <div class="product-detail">
+            {{#ionItem iconLeft=false iconRight=false class="item-text-wrap"}}
+            <span></span>
+            <img style="width:40%;height:90px;" src="{{share}}"  alt="分享" > 
+            {{/ionItem}}
+        </div>
+			{{/each}}
+		  {{/ionList}}
+    {{/ionContent}}
+  {{/ionView}}
+  
+
+</template>

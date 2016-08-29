@@ -1,0 +1,34 @@
+<template name="content">
+  {{#ionModal customTemplate=true}}
+  
+    <style type="text/css">
+		div .line3{height:250px;width: 90%;margin:0 auto 0 auto;}
+
+		img{height: 150px;width: 80%;padding-left: 10%;}
+		p{height: 40px;line-height: 40px;width: 100%;border-bottom: 1px solid #ccc;}
+    </style>
+  	<div class="bar bar-header bar-stable">
+	    <button  type="submit" class="button button-clear" data-action="fh">返回</button>
+	    <h2 class="title">报废生产过程照片</h2>
+	    <button type="submit" class="button button-positive button-clear" data-action="gb">关闭</button>
+  	</div>
+    {{#with veh}}
+  	<div class="content has-header" style="height:100%;position: absolute;overflow-x: hidden;">
+  		<div class="line3" >
+		  	<p>报废生产单位名称:{{dwmc}}</p>
+			<p>报废生产人员姓名:{{sc_xm}}</p>
+			<p>检验操作人员姓名:{{cz_xm}}</p>
+			<p>报废生产工位编号:{{gwbh}}</p>
+			<p>报废车辆车牌号码:{{cphm}}</p>
+			<p>报废车辆发动机号:{{fdjh}}</p>
+			<p>记录摄影机号:{{syjbh}}</p>
+			<p>车架号:{{cjh}}</p>
+		</div>
+		<div style="width: 100%;height: auto;">
+			{{> content_photo}}
+		</div>
+		
+	</div>
+	{{/with}}
+  {{/ionModal}}
+</template>

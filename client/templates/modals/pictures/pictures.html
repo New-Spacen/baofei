@@ -1,0 +1,55 @@
+<template name="pictures">
+  {{#ionModal customTemplate=true}}
+  
+    <style type="text/css">
+		div .line3{height: 178px;width: 100%;border: 1px solid #ccc;margin-top: 10px;}
+		img{width:92%;height:140px;margin-left: 4%;}
+    </style>
+      	<div class="bar bar-header bar-stable">
+        <button data-action="up" type="button" class="button button-clear" >关闭</button>
+        <h2 class="title">报废生产过程照片</h2>
+        <button type="submit" class="button button-positive button-clear" data-action="save">生产完成</button>
+      	</div>
+        {{#with veh}}
+      	<div class="content has-header"  style="height:100%;position: absolute;overflow-x: hidden;">
+			<div class="line3" >
+			  <!-- <label class="item item-input"> -->
+			  	<p>&nbsp;&nbsp;&nbsp;报废车辆全貌照片（见车牌号码）：</p>
+				 <img src="{{qmz}}"  data-action="qmz" > <br/>	 
+			  <!-- </label> -->
+			</div>
+			 
+			 <div class="line3" >
+			  <p>&nbsp;&nbsp;&nbsp;报废车辆发动机损坏照片（见发动机号）：</p>
+				 <img src="{{fdj}}"  data-action="fdj"> <br/>	 
+			</div>
+
+			<div class="line3">
+			  <p>&nbsp;&nbsp;&nbsp;报废车辆方向机损坏照片：</p>
+				 <img src="{{fxj}}"  data-action="fxj"> <br/>	 
+			</div>
+			
+			<div class="line3">
+			  <p>&nbsp;&nbsp;&nbsp;报废车辆变速器损坏照片：</p>
+				 <img src="{{bsq}}"  data-action="bsq"> <br/>	 
+			</div>
+
+			<div class="line3">
+			  <p>&nbsp;&nbsp;&nbsp;报废车辆前后桥损坏照片：</p>
+				 <img src="{{qhq}}"  data-action="qhq"> <br/>	 
+			</div>
+
+			<div class="line3">
+			  <p>&nbsp;&nbsp;&nbsp;报废车辆车架损坏照片（见车架号）：</p>
+				 <img src="{{cjz}}"  data-action="cjz"> <br/>	 
+			</div>
+			
+			<div class="line3" style="height:80px;">
+			  <br/>
+			  <br/>
+			  <br/>
+		    </div> 
+		</div>
+		{{/with}}
+  {{/ionModal}}
+</template>

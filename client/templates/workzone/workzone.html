@@ -1,0 +1,66 @@
+<template name="workzone">
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">大屏幕监控</h1>
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent}}
+      {{#ionList}}
+ <!--     
+        <video id="bg-video" class="video-js vjs-default-skin" controls preload="auto" poster=""
+         data-setup='{}'>
+          <source
+             src="http://iy.kdinfo.cn:8000/video/570a602de16c92de3da828e8.m3u8"
+             type="application/x-mpegURL">
+        </video>
+-->
+
+               
+        {{#each this}}
+
+    <a class="item item-thumbnail-left" href={{pathFor 'workzoneshow' sn=this.sn zone=this.dw}}>
+      <img src=" http://maps.google.cn/maps/api/staticmap?zoom=14&size=200x200&sensor=true&markers={{this.lat}},{{this.lng}}&scale=1">
+      <h2>{{dw}}</h2>
+      <p>绿洲片区</p>
+    </a>
+        {{/each}}
+
+
+      {{/ionList}}
+        
+    {{/ionContent}}
+  {{/ionView}}
+
+</template>
+
+
+
+<template name="workzoneshow">
+
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton class="button-positive" text=false}}
+  {{/contentFor}}
+  
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">{{zonename}} 实时监管</h1>
+  {{/contentFor}}
+
+    {{#ionView}}
+    {{#ionContent}}
+      {{#ionList}}
+  
+        {{#each this}}
+
+    <a  href={{pathFor 'inoutshow'}}>
+
+        <img class="full-image" src="http://kaifu.kdinfo.cn:4000/gridfs/?id={{mainpic}}">
+</a>
+        {{/each}}
+
+      {{/ionList}}
+    {{/ionContent}}
+  {{/ionView}}
+  
+
+</template>
